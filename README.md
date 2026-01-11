@@ -10,6 +10,7 @@ This repository contains documentation, notes, and learning material for using O
 - Cloud Run deployments
 - Best practices
 
+```
 opentofu-gcp-docs/
 │
 ├── 01-Introduction/
@@ -63,3 +64,4 @@ opentofu-gcp-docs/
       ├── folder-structure.md
       ├── security-practices.md
       └── state-management.md
+```
