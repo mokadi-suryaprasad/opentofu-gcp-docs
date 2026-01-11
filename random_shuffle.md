@@ -8,6 +8,20 @@ It is useful when you need random selection, randomized ordering, or load distri
 ## Example Usage
 
 ```hcl
+# Generate a random selection of availability zones
+resource "random_shuffle" "random_azs" {
+  input        = ["asia-south1-a", "asia-south1-b", "asia-south1-c"]
+  result_count = 2
+
+}
+
+# Output the selected random availability zones
+output "random_azs" {
+  value = random_shuffle.random_azs.result
+}
+```
+
+```hcl
 resource "random_shuffle" "example" {
   input        = ["red", "blue", "green", "yellow"]
   result_count = 4
