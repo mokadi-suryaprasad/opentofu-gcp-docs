@@ -8,16 +8,18 @@ It is useful for creating passwords, unique names, secrets, IDs, and tokens.
 ## Example Usage
 
 ```hcl
-resource "random_string" "example" {
-  length  = 12
-  special = false
+# Generate a random string
+resource "random_string" "random_string_example" {
+  length  = 10
+  special = true
   upper   = true
-  lower   = true
   numeric = true
+  lower   = true
 }
 
-output "random_value" {
-  value = random_string.example.result
+# Output the generated random string
+output "random_string_example" {
+  value = random_string.random_string_example.result
 }
 ```
 
