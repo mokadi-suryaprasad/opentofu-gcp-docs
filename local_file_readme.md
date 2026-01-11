@@ -1,6 +1,6 @@
 # Local File Resource (`local_file`)
 
-This example demonstrates how to use the `local_file` resource in OpenTofu to create files on your local machine.  
+This example demonstrates how to use the `local_sensitive_file` resource in OpenTofu to create files on your local machine.  
 This is helpful for generating configuration files, templates, scripts, or storing sensitive output.
 
 ---
