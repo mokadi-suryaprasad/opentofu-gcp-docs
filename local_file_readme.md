@@ -22,7 +22,7 @@ resource "local_sensitive_file" "example_resource" {
 | Field | Description |
 |------|-------------|
 | `filename` | Name or path where the file will be created |
-| `sensitive_content` | Content written to the file; hidden from logs |
+| `local_sensitive_file` | Content written to the file; hidden from logs |
 | `file_permission` | File permissions in Linux format (e.g., 0770) |
 
 ---
