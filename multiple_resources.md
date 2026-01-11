@@ -4,6 +4,12 @@ This document explains different ways to create multiple `local_file` resources 
 
 ---
 ```hcl
+# Configure the Google Cloud provider
+provider "google" {
+  project = "project-fd1037d7-601e-4181-b3a"
+  region  = "asia-south1"
+}
+
 # Multiple resource blocks with the same name "example_resource"
 terraform {
   required_providers {
@@ -13,20 +19,22 @@ terraform {
     }
   }
 }
-provider "google" {
-  project = "project-fd1037d7-601e-4181-b3a"
-  region  = "asia-south1"
-}
+
+# Create local files with specified content and permissions
 resource "local_file" "learning_tofu" {
   filename        = "tofu.txt"
   content         = "I am learning OpenTofu"
   file_permission = "0770"
 }
+
+# Create another local file with different content
 resource "local_file" "learning_gcp" {
   filename        = "gcp.txt"
   content         = "I am learning OpenTofu with GCP"
   file_permission = "0770"
 }
+
+
 ```
 ---
 
