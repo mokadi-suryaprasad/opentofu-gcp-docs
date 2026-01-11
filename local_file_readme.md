@@ -8,10 +8,10 @@ This is helpful for generating configuration files, templates, scripts, or stori
 ## Example
 
 ```hcl
-resource "local_file" "example_resource" {
-  filename          = "example.txt"
-  sensitive_content = "Master OpenTofu with GCP"
-  file_permission   = "0770"
+resource "local_sensitive_file" "example_resource" {
+  filename        = "example.txt"
+  content         = "Master OpenTofu with GCP"
+  file_permission = "0770"
 }
 ```
 
