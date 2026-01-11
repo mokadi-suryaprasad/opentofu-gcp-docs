@@ -8,6 +8,20 @@ This is useful for creating unique resource names, testing, and avoiding naming 
 ## Example Usage
 
 ```hcl
+# Specify required providers and their versions
+terraform {
+  required_providers {
+    google = {
+      source  = "hashicorp/google"
+      version = "~> 5.0"
+    }
+    random = {
+      source  = "hashicorp/random"
+      version = "~> 3.0"
+    }
+  }
+}
+
 resource "random_integer" "random" {
   min = 10
   max = 100
@@ -16,6 +30,7 @@ resource "random_integer" "random" {
 output "random_number" {
   value = random_integer.random.result
 }
+
 ```
 
 ---
