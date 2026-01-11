@@ -8,6 +8,24 @@ It is commonly used for database passwords, service account secrets, and applica
 ## Example Usage
 
 ```hcl
+
+# Generate a random password
+resource "random_password" "my_password" {
+  length  = 16
+  special = true
+  upper   = true
+  numeric = true
+  lower   = true
+}
+
+# Output the generated password
+output "myrandom_password" {
+  value     = random_password.my_password.result
+  sensitive = true
+}
+```
+
+```hcl
 resource "random_password" "example" {
   length           = 16
   special          = true
