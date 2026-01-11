@@ -3,6 +3,32 @@
 This document explains different ways to create multiple `local_file` resources in OpenTofu/Terraform.
 
 ---
+```hcl
+# Multiple resource blocks with the same name "example_resource"
+terraform {
+  required_providers {
+    local = {
+      source  = "hashicorp/local"
+      version = "~> 2.1"
+    }
+  }
+}
+provider "google" {
+  project = "project-fd1037d7-601e-4181-b3a"
+  region  = "asia-south1"
+}
+resource "local_file" "learning_tofu" {
+  filename        = "tofu.txt"
+  content         = "I am learning OpenTofu"
+  file_permission = "0770"
+}
+resource "local_file" "learning_gcp" {
+  filename        = "gcp.txt"
+  content         = "I am learning OpenTofu with GCP"
+  file_permission = "0770"
+}
+```
+---
 
 ## Method 1: Using `count`
 
